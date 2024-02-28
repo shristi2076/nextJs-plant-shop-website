@@ -1,5 +1,5 @@
-import snake from "@/public/snake-plant.jpg";
-import areca from "@/public/Areca.webp";
+import snake from "@/public/snake.png";
+import areca from "@/public/money.png";
 
 export const products = [
   {

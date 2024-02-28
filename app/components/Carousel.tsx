@@ -31,7 +31,7 @@ interface SlideProps {
 const Slide = ({ image, imageIndex, isActive }: SlideProps) => {
   return (
     <div
-      className={`flex flex-col items-center gap-5 md:py-5 lg:py-8 transform ${
+      className={`flex flex-col items-center gap-5 md:py-5 lg:py-20 transform ${
         isActive ? "scale-100" : "scale-50"
       } transition-transform duration-300 opacity-${isActive ? 100 : 50}`}
       key={image.id}
@@ -69,14 +69,14 @@ const Slide = ({ image, imageIndex, isActive }: SlideProps) => {
 };
 
 const Carousel = ({ images }: CarouselProps) => {
-  const NextArrow = ({ onClick }) => {
+  const NextArrow = ({ onClick }: { onClick?: () => void }) => {
     return (
       <div className="arrow next hidden" onClick={onClick}>
         <FontAwesomeIcon icon={faArrowRight} />
       </div>
     );
   };
-  const PrevArrow = ({ onClick }) => {
+  const PrevArrow = ({ onClick }: { onClick?: () => void }) => {
     return (
       <div className="arrow prev hidden" onClick={onClick}>
         <FontAwesomeIcon icon={faArrowLeft} />
@@ -86,14 +86,17 @@ const Carousel = ({ images }: CarouselProps) => {
 
   const [imageIndex, setImageIndex] = useState(0);
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
+    speed: 300,
+    autoPlaySpeed: 3000,
     slidesToShow: 3,
     slidesToScroll: 1,
     centerMode: true,
-    nextArrow: <NextArrow />,
+    slick: <NextArrow />,
     prevArrow: <PrevArrow />,
-    beforeChange: (current, next) => setImageIndex(next),
+    beforeChange: (current: any, next: React.SetStateAction<number>) =>
+      setImageIndex(next),
     centerPadding: "0px",
     responsive: [
       {

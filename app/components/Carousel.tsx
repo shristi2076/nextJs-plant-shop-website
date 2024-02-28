@@ -47,7 +47,9 @@ const Slide = ({ image, imageIndex, isActive }: SlideProps) => {
       </div>
       <div
         className={`flex items-center justify-around gap-5 lg:gap-5 ${
-          isActive ? " bg-slate-300 rounded-3xl py-3 w-fit lg:w-[105%]" : ""
+          isActive
+            ? " bg-slate-300 rounded-3xl p-3 lg:px-0 w-fit lg:w-[105%]"
+            : ""
         } `}
       >
         <div className={`flex flex-col ${isActive ? "" : "text-center"}`}>

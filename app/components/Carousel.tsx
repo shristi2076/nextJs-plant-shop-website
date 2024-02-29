@@ -133,10 +133,10 @@ const Carousel = ({ images }: CarouselProps) => {
         className={`flex items-center justify-around gap-5 lg:gap-5 absolute bottom-[-35px] left-1/2 transform -translate-x-1/2  p-2 rounded-3xl bg-opacity-[0.5] bg-slate-200`}
       >
         <div className={`flex flex-col`}>
-          <div className="md:text-[21px] xl:text-2xl font-bold">
+          <div className="md:text-[21px] xl:text-2xl text-white font-bold">
             {images[imageIndex].title}
           </div>
-          <div className="md:text-[21px] xl:text-2xl font-bold">
+          <div className="md:text-[21px] xl:text-2xl text-white font-bold">
             {images[imageIndex].price}
           </div>
         </div>

@@ -22,13 +22,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="h-screen flex items-center justify-center bg-[url(/background.webp)] bg-center bg-no-repeat bg-cover">
-        <div className="flex flex-col-reverse md:flex-row md:gap-5 w-[80%] h-[80%] ">
+        <div className="flex flex-col-reverse md:flex-row gap-10 md:gap-5 w-[80%] h-[80%]">
           <Navbar />
-          <div className="flex flex-col gap-2 w-full h-full">
-            <Pathname />
-            <div className="bg-slate-50 bg-opacity-30 backdrop-blur-3xl rounded flex-1 ">
-              <Action />
-              <div className="overflow-visible w-full h-full">{children}</div>
+          <div className="w-full h-full">
+            <div className="h-[10%]">
+              <Pathname />
+            </div>
+            <div className="bg-slate-50 bg-opacity-30 backdrop-blur-3xl rounded-3xl w-full h-[90%]">
+              <div className="h-[20%] md:h-[15%]">
+                <Action />
+              </div>
+              <div className="overflow-visible w-full h-[80%] md:h-[85%]">
+                {children}
+              </div>
             </div>
           </div>
         </div>

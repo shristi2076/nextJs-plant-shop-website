@@ -11,7 +11,7 @@ const Cart = () => {
       <div className="flex flex-1 flex-col justify-between">
         <div className="flex flex-col justify-between gap-5 lg:flex-row md:p-12">
           <div className="flex flex-col gap-5 md:flex-row md:gap-20 flex-wrap content-center">
-            <div className="flex flex-col items-center md:gap-5 lg:gap-14">
+            <div className="flex flex-col items-center md:gap-5 ">
               <span className="text-center text-xl md:text-2xl">Product</span>
               <Image src={Snake} alt="no image" width={100} height={200} />
             </div>

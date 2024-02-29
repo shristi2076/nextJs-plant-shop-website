@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import Image, { StaticImageData } from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Link from "next/link";
 
 interface CarouselProps {
   images: {
@@ -31,8 +32,8 @@ interface SlideProps {
 const Slide = ({ image, imageIndex, isActive }: SlideProps) => {
   return (
     <div
-      className={`flex flex-col items-center gap-5 md:py-5 lg:py-20 transform ${
-        isActive ? "scale-100" : "scale-50"
+      className={`relative flex flex-col items-center gap-5  transform ${
+        isActive ? "scale-100 md:py-5 lg:py-20" : "scale-50"
       } transition-transform duration-300 opacity-${isActive ? 100 : 50}`}
       key={image.id}
     >
@@ -48,19 +49,26 @@ const Slide = ({ image, imageIndex, isActive }: SlideProps) => {
       <div
         className={`flex items-center justify-around gap-5 lg:gap-5 ${
           isActive
-            ? " bg-slate-300 rounded-3xl p-3 lg:px-0 w-fit lg:w-[105%]"
+            ? "absolute -bottom-24  bg-slate-300 rounded-3xl p-3 lg:px-0 w-fit lg:w-[105%]"
             : ""
         } `}
       >
         <div className={`flex flex-col ${isActive ? "" : "text-center"}`}>
-          <div className="text-[21px] xl:text-2xl font-bold">{image.title}</div>
-          <div className="text-[22px] xl:text-2xl font-bold">{image.price}</div>
+          <div className="md:text-[21px] xl:text-2xl font-bold">
+            {image.title}
+          </div>
+          <div className="md:text-[22px] xl:text-2xl font-bold">
+            {image.price}
+          </div>
         </div>
         {isActive && (
           <div className="flex">
-            <button className="bg-blue-500 flex self-center xl:text-xl text-white py-2 px-4 rounded-2xl mt-4 hover:bg-blue-600">
+            <Link
+              className="bg-blue-500 flex self-center xl:text-xl text-white py-2 px-4 rounded-2xl mt-4 hover:bg-blue-600"
+              href="/cart"
+            >
               + Add to Cart
-            </button>
+            </Link>
           </div>
         )}
       </div>

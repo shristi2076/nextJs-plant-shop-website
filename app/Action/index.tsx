@@ -12,7 +12,7 @@ const Action = () => {
   const isActiveLink = (path: string) => pathname === path;
 
   return (
-    <div className="flex gap-4 items-center md:flex-row md:justify-between p-5 mx-5">
+    <div className="flex flex-col gap-4 items-center md:flex-row md:justify-between p-5 mx-5">
       <div className="flex gap-3">
         <Link
           href="/"

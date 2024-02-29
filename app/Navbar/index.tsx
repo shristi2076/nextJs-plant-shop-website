@@ -18,15 +18,15 @@ const Navbar = () => {
   const isActiveLink = (path: string) => pathname === path;
 
   return (
-    <div className="flex flex-col gap-4 items-center md:flex-row md:justify-between">
-      <div className="flex flex-col gap-3 bg-slate-50 bg-opacity-30 bg-blur p-2 rounded-3xl backdrop-blur-3xl">
+    <div className="flex gap-4 items-center justify-center md:flex-row ">
+      <div className="flex md:flex-col gap-3 bg-slate-50 bg-opacity-30 bg-blur p-2 rounded-3xl backdrop-blur-3xl">
         <Link
           href="/home"
           className={`flex gap-3  rounded-full items-center ${
             isActiveLink("/home") ? "bg-white" : ""
           }`}
         >
-          <Image src={HomeIcon} className="w-6 m-2" alt="no icon" />
+          <Image src={HomeIcon} className="w-8 m-2" alt="no icon" />
           {/* <FontAwesomeIcon
             icon={faHome}
             className="w-7 m-2 text-black "
@@ -44,7 +44,7 @@ const Navbar = () => {
             className="w-7 m-2 text-black "
             size="xl"
           /> */}
-          <Image src={PlantIcon} className="w-6 m-2" alt="no icon" />
+          <Image src={PlantIcon} className="w-8 m-2" alt="no icon" />
         </Link>
         <Link
           href="/cart"
@@ -57,7 +57,7 @@ const Navbar = () => {
             className="w-7 m-2 text-black "
             size="xl"
           /> */}
-          <Image src={CartIcon} className="w-6 m-2" alt="no icon" />
+          <Image src={CartIcon} className="w-8 m-2" alt="no icon" />
         </Link>
         <Link
           href="/settings"

@@ -8,8 +8,10 @@ import {
   faSliders,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { CartIcon, HomeIcon, PlantIcon } from "@/public";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -24,11 +26,12 @@ const Navbar = () => {
             isActiveLink("/home") ? "bg-white" : ""
           }`}
         >
-          <FontAwesomeIcon
+          <Image src={HomeIcon} className="w-6 m-2" alt="no icon" />
+          {/* <FontAwesomeIcon
             icon={faHome}
             className="w-7 m-2 text-black "
             size="xl"
-          />
+          /> */}
         </Link>
         <Link
           href="/"
@@ -36,11 +39,12 @@ const Navbar = () => {
             isActiveLink("/") ? "bg-white" : ""
           }`}
         >
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             icon={faSeedling}
             className="w-7 m-2 text-black "
             size="xl"
-          />
+          /> */}
+          <Image src={PlantIcon} className="w-6 m-2" alt="no icon" />
         </Link>
         <Link
           href="/cart"
@@ -48,11 +52,12 @@ const Navbar = () => {
             isActiveLink("/cart") ? "bg-white" : ""
           }`}
         >
-          <FontAwesomeIcon
+          {/* <FontAwesomeIcon
             icon={faCartShopping}
             className="w-7 m-2 text-black "
             size="xl"
-          />
+          /> */}
+          <Image src={CartIcon} className="w-6 m-2" alt="no icon" />
         </Link>
         <Link
           href="/settings"

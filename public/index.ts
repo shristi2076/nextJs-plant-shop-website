@@ -5,6 +5,7 @@ import GridIcon from "./grid_view.svg";
 import HomeIcon from "./home.svg";
 import TabIcon from "./tab.svg";
 import LockIcon from "./lock.svg";
+import PlantIcon from "./plant.svg";
 export {
   SearchIcon,
   CartIcon,
@@ -13,4 +14,5 @@ export {
   HomeIcon,
   TabIcon,
   LockIcon,
+  PlantIcon,
 };
